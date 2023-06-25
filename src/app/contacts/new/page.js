@@ -1,9 +1,5 @@
-
-
 const New = () => {
-  return (
-    <div>add new</div>
-  )
-}
+  return <div>add new</div>;
+};
 
-export default New
+export default New;

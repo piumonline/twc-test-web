@@ -2,32 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+@layer base {
+  @font-face {
+    font-family: "FutuBold";
+    src: url("/fonts/FutuBold.ttf");
+  }
+  @font-face {
+    font-family: "FutuLight";
+    src: url("/fonts/FutuLight.ttf");
+  }
+}
+
+/* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-}
+} */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 /* body {
   color: rgb(var(--foreground-rgb));
   background: black
 } */
-/* .bgd{
-  background: red;
-} */
 
-.bgd {
-  background-image: url('/img/Ellipse\ 1.svg'), url('/img/contact-us-customer-service-sketch-doodle-icons-seamless-pattern-vector-illustration-2JB18KT\ 1.svg'), url('/img/contact-us-customer-service-sketch-doodle-icons-seamless-pattern-vector-illustration-2JB18KT\ 2.svg');
+.background_home {
+  background-image: url("/img/background/Ellipse\ 1.svg"),
+    url("/img/background/contact-us-customer-service-sketch-doodle-icons-seamless-pattern-vector-illustration-2JB18KT\ 1.svg"),
+    url("/img/background/contact-us-customer-service-sketch-doodle-icons-seamless-pattern-vector-illustration-2JB18KT\ 2.svg");
   background-position: center center, top right, bottom left;
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-size: cover, 15%, 14%;
 }
-
