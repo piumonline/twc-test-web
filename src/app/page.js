@@ -1,5 +1,5 @@
 import Logo from "@/components/Logo.js";
-import AddContactBtn from "@/components/AddContactBtn.js";
+import AddContactBtn from "@/components/FirstContactButton.js";
 import LogoutBtn from "@/components/LogoutBtn.js";
 
 export default function Home() {

@@ -13,7 +13,7 @@ module.exports = {
       },
 
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "eclipce": "url('/img/background/Ellipse\ 2.svg')",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
