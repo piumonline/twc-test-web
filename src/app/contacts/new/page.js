@@ -1,7 +1,9 @@
+import AddContactBtn from "@/components/FirstContactButton";
+
 const New = () => {
   return (
     <section className="">
-      <div className="pt-16">
+      <div className="pt-10">
         <p className="font-FutuBold inline text-left text-[50px] text-white mb-[61px]">
           New Contact
         </p>
@@ -44,6 +46,7 @@ const New = () => {
           </div>
         </form>
       </div>
+      <AddContactBtn />
 
       {/* <div className='flex h-[55px] items-center rounded-[50px] bg-white py-[3px] pl-[41px] pr-[327px] text-left  text-[#083F46]'   >
                 <p className="h-[50px] w-[109px] text-[25px] leading-[50px]">

@@ -1,6 +1,5 @@
 import Logo from "@/components/Logo.js";
 import LogoutBtn from "@/components/LogoutBtn.js";
-import AddContactBtn from "@/components/AddContactBtn";
 
 export default function Layout({ children }) {
   return (
@@ -12,7 +11,6 @@ export default function Layout({ children }) {
                 <div className="bg-yellow-200 grow " > */}
           <div className="grow flex-col px-[204px] flex justify-center">
             <div className="flex-col text-left text-white">{children}</div>
-            <AddContactBtn />
           </div>
           <div className="fgrid">
             <LogoutBtn />
