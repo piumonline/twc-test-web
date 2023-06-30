@@ -1,3 +1,5 @@
+"use client"
+
 import AddContactButton from "@/components/AddContactButton";
 
 const ContactsView = ({ contacts }) => {

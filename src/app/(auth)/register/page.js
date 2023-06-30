@@ -4,8 +4,11 @@ import Logo from "@/components/Logo";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const Register = () => {
+  const router = useRouter();
+
   const [formValues, setFormValues] = useState({
     // state for form values
     email: "",
@@ -36,11 +39,15 @@ const Register = () => {
       // submit form values to api
       const registerUser = async () => {
         try {
-          const response = await axios.post("/register", {
+          const response = await axios.post("http://localhost:8080/api/register", {
             email: formValues.email,
             password: formValues.password,
           });
+          console.log(formValues.email);
+          console.log(formValues.password);
+
           console.log("user created");
+          router.push("/login");
         } catch (error) {
           console.error(error);
         }
