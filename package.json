@@ -2,6 +2,7 @@
   "name": "twc-test-web",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8080/api",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,8 +11,10 @@
   },
   "dependencies": {
     "autoprefixer": "10.4.14",
+    "axios": "^1.4.0",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.7",
+    "js-cookie": "^3.0.5",
     "next": "13.4.7",
     "postcss": "8.4.24",
     "react": "18.2.0",

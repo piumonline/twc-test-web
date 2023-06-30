@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .input-field {
+    @apply flex h-[55px]  items-center rounded-[50px] bg-white py-[3px] pl-[41px]  xl:max-w-[477px] 2xl:max-w-none;
+  }
+}
+
 @layer base {
   @font-face {
     font-family: "FutuBold";
