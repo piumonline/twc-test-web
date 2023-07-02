@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import AddContactBtn from "@/components/AddContactButton";
@@ -7,7 +7,7 @@ const WelcomeScreen = () => {
   return (
     <div>
       <div className="flex-col text-left text-white">
-        <div className="pt-12">
+        <div className="mb-10">
           <p className="inline font-FutuBold text-[50px] font-bold leading-[73px]">
             Welcome,
             <br />
@@ -17,7 +17,9 @@ const WelcomeScreen = () => {
             a new contact.
           </p>
         </div>
-        <AddContactBtn currentPage="welcome" />
+        <div>
+          <AddContactBtn currentPage="welcome" />
+        </div>
       </div>
     </div>
   );
