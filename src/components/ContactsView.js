@@ -4,17 +4,38 @@ import AddContactButton from "@/components/AddContactButton";
 import ReadOnlyRow from "./ReadOnlyRow";
 import EditableRow from "./EditableRow";
 import { useState } from "react";
+import PopupWindow from "./PopupWindow ";
 
 const ContactsView = ({ contacts }) => {
 
   const [editContactId, setEditContactId] = useState(null); //use state to save the id of the contact being edited
+  const [showPopup, setShowPopup] = useState(false); //popup window state
+  const [confirm, setConfirm] = useState(false); //confirm delete state
 
-  const handleEditClick = (event, contact) => { //handleEditClick is called when the user clicks the edit button
+  //function to toggle the popup window
+  const togglePopup = () => {
+    setShowPopup(!showPopup);
+  };
+
+  //function to handle the pop up cancel button
+  const handleCancel = () => {
+    setShowPopup(false);
+  };
+
+  //function to handle the pop up confirm button
+  const handleConfirm = () => {
+    setConfirm(true);
+    setShowPopup(false);
+  };
+
+  //handleEditClick is called when the user clicks the edit button
+  const handleEditClick = (event, contact) => { 
     event.preventDefault();
     setEditContactId(contact._id);
   };
 
-  const handleCancelClick = () => {     //handleCancelClick is called when the user clicks the cancel button
+  //handleCancelClick is called when the user clicks the cancel button
+  const handleCancelClick = () => { 
     setEditContactId(null);
   };
 
@@ -60,12 +81,16 @@ const ContactsView = ({ contacts }) => {
                           contact={contact}
                           index={index}
                           handleCancelClick={handleCancelClick}
+                          togglePopup={togglePopup}
+                          
                         />
                       ) : (
                         <ReadOnlyRow
                           contact={contact}
                           index={index}
                           handleEditClick={handleEditClick}
+                          togglePopup={togglePopup}
+                          
                         />
                       )}
                     </>
@@ -76,6 +101,7 @@ const ContactsView = ({ contacts }) => {
           </div>
         </div>
       </div>
+      {showPopup && <PopupWindow isVisible={showPopup} onCancel={handleCancel} onConfirm={handleConfirm} confirm={confirm}/>}
     </div>
   );
 };

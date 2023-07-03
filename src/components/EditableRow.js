@@ -35,6 +35,7 @@ const EditableRow = ({ contact, handleCancelClick }) => {
         { headers }
       );
       console.log("updated");
+      handleCancelClick(e);
     } catch (error) {
       console.log(error);
     }

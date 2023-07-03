@@ -1,6 +1,5 @@
 "use client";
 import middleware from "@/middleware/middleware"; // middleware to protect routes
-import AddContactBtn from "@/components/AddContactButton";
 import { useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";

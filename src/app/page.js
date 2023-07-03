@@ -11,11 +11,12 @@ import ContactsView from "@/components/ContactsView";
 const Home = () => {
   const [contacts, setContacts] = useState([]); //use useState hook to save fetched data
 
-  const token = Cookies.get("token"); // Retrieve the JWT token from cookies
+  
 
   //get data from backend
     const getAllContact = async () => {
       try {
+        const token = Cookies.get("token"); // Retrieve the JWT token from cookies
         const headers = { Authorization: `Bearer ${token}` }; // Set the Authorization header
 
         const response = await axios.get("http://localhost:8080/api/contacts", {
@@ -31,7 +32,7 @@ const Home = () => {
       getAllContact();
     },[]); //update state when contacts change
 
-  Cookies.set('token', token, { expires: 1 }); // save token in cookie with expiry of 1 day
+  // Cookies.set('token', token, { expires: 1 }); // save token in cookie with expiry of 1 day
 
   return (
     <main className="background_home min-h-screen">
