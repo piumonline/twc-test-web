@@ -1,11 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
+import Image from "next/image";
 
-const EditableRow = ({ contact, handleCancelClick }) => { 
-  const [contactData, setContactData] = useState({
+
+const EditableRow = ({ contact, handleCancelClick, togglePopup, confirm, setRow }) => { 
+
+  const [contactData, setContactData] = useState({ 
     name: contact.name,
     gender: contact.gender,
     email: contact.email,
@@ -18,7 +21,8 @@ const EditableRow = ({ contact, handleCancelClick }) => {
 
   //update contact
   const handleSaveClick = async (e, contact) => { 
-    console.log(contact._id);
+    setRow("EditOnlyRow");
+    togglePopup();
 
     try {
       const token = Cookies.get("token");
@@ -41,8 +45,15 @@ const EditableRow = ({ contact, handleCancelClick }) => {
     }
   };
 
+
   return (
     <tr className="bg-white border-b hover:text-[#083F46]">
+      <td className="flex justify-center px-2">
+        {contact.gender === "female" ? (<Image src="/img/girl.png" width={40} height={40} />):(
+          <Image src="/img/boy.png" width={40} height={40} />
+        )}
+        
+        </td>
       <td className="px-6 py-4">
         <input
           type="text"

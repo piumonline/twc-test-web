@@ -11,8 +11,6 @@ import ContactsView from "@/components/ContactsView";
 const Home = () => {
   const [contacts, setContacts] = useState([]); //use useState hook to save fetched data
 
-  
-
   //get data from backend
     const getAllContact = async () => {
       try {
@@ -30,7 +28,7 @@ const Home = () => {
 
     useEffect(() => {
       getAllContact();
-    },[]); //update state when contacts change
+    },[contacts]); //update state when contacts change
 
   // Cookies.set('token', token, { expires: 1 }); // save token in cookie with expiry of 1 day
 
