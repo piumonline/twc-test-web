@@ -12,7 +12,6 @@ const Home = () => {
   const [contacts, setContacts] = useState([]); //use useState hook to save fetched data
 
   //get data from backend
-  useEffect(() => {
     const getAllContact = async () => {
       try {
         const token = Cookies.get("token"); // Retrieve the JWT token from cookies
@@ -27,10 +26,9 @@ const Home = () => {
       }
     };
 
-    getAllContact();
-  }, []);
-
-  useEffect(() => {}, [contacts]);
+    useEffect(() => {
+      getAllContact();
+    },[contacts]); //update state when contacts change
 
   // Cookies.set('token', token, { expires: 1 }); // save token in cookie with expiry of 1 day
 
